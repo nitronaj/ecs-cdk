@@ -31,5 +31,7 @@ export class EcsCdkStack extends cdk.Stack {
     const capacityProvider = new ecs.AsgCapacityProvider(this, 'WorkshopCapacityProvider', { autoScalingGroup });
 
     cluster.addAsgCapacityProvider(capacityProvider);
+
+		cluster.enableFargateCapacityProviders();
   }
 }
